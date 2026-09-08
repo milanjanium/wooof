@@ -7,9 +7,9 @@
 
 import Phaser from "phaser";
 import WorldScene from "./WorldScene.js";
-import { setupLogin } from "./login.js";
+import { setupStart } from "./login.js";
 
-function startGame(username) {
+function startGame() {
   document.getElementById("game").style.display = "block";
   document.body.classList.add("playing");
 
@@ -27,10 +27,8 @@ function startGame(username) {
     scene: [WorldScene],
   };
 
-  const game = new Phaser.Game(config);
-  // Den angemeldeten Benutzer für die Szene hinterlegen.
-  game.registry.set("username", username);
+  new Phaser.Game(config);
 }
 
-// Login-Bildschirm aufsetzen; bei Erfolg das Spiel starten.
-setupLogin(startGame);
+// Startbildschirm aufsetzen; beim Klick auf "Spielen" das Spiel starten.
+setupStart(startGame);

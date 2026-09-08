@@ -31,8 +31,7 @@ export default class WorldScene extends Phaser.Scene {
   }
 
   create() {
-    this.username = this.registry.get("username") || "spieler";
-    this.save = loadGame(this.username);
+    this.save = loadGame();
 
     const worldWidth = WORLD_COLS * TILE_SIZE;
     const worldHeight = WORLD_ROWS * TILE_SIZE;
@@ -91,7 +90,7 @@ export default class WorldScene extends Phaser.Scene {
     this.keys = this.input.keyboard.addKeys("W,A,S,D");
 
     // --- Begrüßung ---
-    this.addHint(`Willkommen, ${this.username}!  ·  Lauf mit Pfeiltasten / WASD 🐾`);
+    this.addHint("Lauf mit Pfeiltasten / WASD  ·  Sag hallo zum Hund! 🐾");
 
     // --- Automatisches Speichern ---
     // Spielzeit hochzählen
@@ -119,7 +118,7 @@ export default class WorldScene extends Phaser.Scene {
     if (!this.player) return;
     this.save.x = Math.round(this.player.x);
     this.save.y = Math.round(this.player.y);
-    saveGame(this.username, this.save);
+    saveGame(this.save);
   }
 
   addHint(text) {
