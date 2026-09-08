@@ -27,7 +27,7 @@ export default class WorldScene extends Phaser.Scene {
     this.load.on("loaderror", (file) => {
       if (file.key === "dog1") this.dogImageOk = false;
     });
-    this.load.image("dog1", "/assets/dogs/dog1.png");
+    this.load.image("dog1", import.meta.env.BASE_URL + "assets/dogs/dog1.png");
   }
 
   create() {
