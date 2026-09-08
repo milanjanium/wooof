@@ -1,0 +1,17 @@
+# Abhängigkeiten (werden per "npm install" neu erzeugt – nicht einchecken)
+node_modules/
+
+# Build-Ergebnisse
+dist/
+dist-ssr/
+
+# Logs & Zwischendateien
+*.log
+npm-debug.log*
+.vite/
+
+# Betriebssystem- / Editor-Kram
+.DS_Store
+.idea/
+.vscode/
+*.local
